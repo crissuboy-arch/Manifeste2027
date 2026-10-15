@@ -1,0 +1,13 @@
+{
+  "name": "Manifest 2027 AI",
+  "short_name": "Manifest2027",
+  "description": "Your personal AI manifestation companion for 2027.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#091426",
+  "theme_color": "#091426",
+  "icons": [
+    { "src": "/icons/icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "/icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any maskable" }
+  ]
+}

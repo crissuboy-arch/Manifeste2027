@@ -1,0 +1,12 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --night: #091426;
+  --deep: #142B45;
+  --gold: #D7B56D;
+  --white: #FFFFFF;
+  --cream: #F7F3EA;
+}
+body { font-family: ui-serif, Georgia, serif; }
