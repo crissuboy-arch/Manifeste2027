@@ -5,8 +5,8 @@ import "./globals.css";
 const nunito = Nunito({ subsets: ["latin"], weight: ["400", "600", "700", "800", "900"], variable: "--font-body" });
 
 export const metadata: Metadata = {
-  title: "Manifest 2027 AI — Wake up excited about your future",
-  description: "Your 5-minute morning ritual: affirmations, gratitude, intentions and an AI coach. Turn your 2027 dreams into daily dopamine.",
+  title: "Manifest 2027 AI — Ebook + App + AI Guide",
+  description: "Manifest 2027 AI: an ebook, a mobile app and an AI guide for your 21-day journey of intention, confidence and personal transformation.",
   manifest: "/manifest.webmanifest",
   appleWebApp: { capable: true, title: "Manifest 2027", statusBarStyle: "default" },
 };
