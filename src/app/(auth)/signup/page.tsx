@@ -13,8 +13,13 @@ export default function Signup() {
   async function onSubmit(e: React.FormEvent) {
     e.preventDefault();
     setMsg("Creating account…");
-    const { error } = await supabase.auth.signUp({ email, password });
-    setMsg(error ? error.message : "Check your email to confirm your account.");
+    try {
+      const { error } = await supabase.auth.signUp({ email, password });
+      setMsg(error ? error.message : "Check your email to confirm your account.");
+    } catch {
+      // Never leave the form hanging on an unexpected failure.
+      setMsg("Something went wrong. Please try again.");
+    }
   }
 
   return (
