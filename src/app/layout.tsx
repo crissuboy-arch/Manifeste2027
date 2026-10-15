@@ -15,7 +15,8 @@ export const viewport: Viewport = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
-      <body className="bg-[#091426] text-[#F7F3EA] antialiased">{children}</body>
+      <body className="bg-[#091426] text-[#F7F3EA] antialiased">{children}      <script dangerouslySetInnerHTML={{ __html: `if("serviceWorker" in navigator){navigator.serviceWorker.register("/sw.js").catch(()=>{});}` }} />
+    </body>
     </html>
   );
 }
