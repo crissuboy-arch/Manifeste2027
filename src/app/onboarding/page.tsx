@@ -30,24 +30,24 @@ export default function Onboarding() {
     else window.location.href = "/dashboard";
   }
 
-  const inp = "w-full mb-4 px-4 py-3 rounded-lg bg-[#091426] border border-[#D7B56D]/20 outline-none";
+  const inp = "w-full mb-4 px-4 py-3 rounded-lg bg-[#FFF9F3] border border-violet-300/20 outline-none";
   return (
-    <main className="min-h-screen bg-[#091426] text-[#F7F3EA] px-6 py-16">
-      <form onSubmit={save} className="max-w-lg mx-auto bg-[#142B45] rounded-2xl p-8">
-        <h1 className="text-2xl text-[#D7B56D] mb-2">Welcome — let's personalize your 2027</h1>
-        <p className="text-[#F7F3EA]/60 mb-6 text-sm">Answer once. Your dashboard adapts to you.</p>
+    <main className="min-h-screen bg-[#FFF9F3] text-[#1E1B2E] px-6 py-16">
+      <form onSubmit={save} className="max-w-lg mx-auto bg-white rounded-2xl card-shadow p-8">
+        <h1 className="text-2xl text-[#8B5CF6] mb-2">Welcome — let's personalize your 2027</h1>
+        <p className="text-[#6B6580] mb-6 text-sm">Answer once. Your dashboard adapts to you.</p>
         <input className={inp} placeholder="Your name" value={name} onChange={e => setName(e.target.value)} required />
         <textarea className={inp} placeholder="Your main goal for 2027" rows={3} value={goal} onChange={e => setGoal(e.target.value)} required />
-        <p className="text-sm text-[#D7B56D] mb-2">Areas of interest</p>
+        <p className="text-sm text-[#8B5CF6] mb-2">Areas of interest</p>
         <div className="flex flex-wrap gap-2 mb-4">
           {AREAS.map(a => (
             <button type="button" key={a} onClick={() => toggle(interests, a, setInterests)}
-              className={`px-4 py-2 rounded-full text-sm border ${interests.includes(a) ? "bg-[#D7B56D] text-[#091426] border-[#D7B56D]" : "border-[#D7B56D]/30"}`}>{a}</button>
+              className={`px-4 py-2 rounded-full text-sm border ${interests.includes(a) ? "bg-gradient-to-r from-violet-600 to-fuchsia-500 text-white border-violet-300" : "border-violet-300/30"}`}>{a}</button>
           ))}
         </div>
         <input className={inp} placeholder="Habits you want to build (comma separated)" value={habits} onChange={e => setHabits(e.target.value)} />
-        <button className="w-full bg-[#D7B56D] text-[#091426] py-3 rounded-full font-medium mt-2">Create My Dashboard</button>
-        {msg && <p className="text-sm text-center mt-4 text-[#F7F3EA]/70">{msg}</p>}
+        <button className="w-full bg-gradient-to-r from-violet-600 to-fuchsia-500 text-white py-3 rounded-full font-medium mt-2">Create My Dashboard</button>
+        {msg && <p className="text-sm text-center mt-4 text-[#6B6580]">{msg}</p>}
       </form>
     </main>
   );

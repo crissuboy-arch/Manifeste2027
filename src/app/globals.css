@@ -2,11 +2,27 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --night: #091426;
-  --deep: #142B45;
-  --gold: #D7B56D;
-  --white: #FFFFFF;
-  --cream: #F7F3EA;
+html { scroll-behavior: smooth; }
+body { font-family: var(--font-body), ui-rounded, system-ui, sans-serif; -webkit-tap-highlight-color: transparent; }
+
+@keyframes floaty { 0%,100% { transform: translateY(0) rotate(0deg); } 50% { transform: translateY(-14px) rotate(3deg); } }
+@keyframes floaty2 { 0%,100% { transform: translateY(0) rotate(0deg); } 50% { transform: translateY(12px) rotate(-4deg); } }
+@keyframes blob { 0%,100% { transform: translate(0,0) scale(1); } 33% { transform: translate(30px,-40px) scale(1.15); } 66% { transform: translate(-25px,25px) scale(0.92); } }
+@keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+@keyframes pop { 0% { transform: scale(1); } 40% { transform: scale(1.25) rotate(-6deg); } 100% { transform: scale(1); } }
+@keyframes shine { from { background-position: 0% 50%; } to { background-position: 200% 50%; } }
+
+.anim-floaty { animation: floaty 6s ease-in-out infinite; }
+.anim-floaty2 { animation: floaty2 7s ease-in-out infinite; }
+.anim-blob { animation: blob 14s ease-in-out infinite; }
+.anim-marquee { animation: marquee 28s linear infinite; }
+.anim-pop { animation: pop 0.45s ease; }
+
+.text-shine {
+  background: linear-gradient(110deg, #8B5CF6, #EC4899, #F59E0B, #8B5CF6);
+  background-size: 200% auto;
+  -webkit-background-clip: text; background-clip: text; color: transparent;
+  animation: shine 5s linear infinite;
 }
-body { font-family: ui-serif, Georgia, serif; }
+.card-shadow { box-shadow: 0 10px 40px -12px rgba(139,92,246,0.25); }
+.card-shadow-pink { box-shadow: 0 10px 40px -12px rgba(236,72,153,0.28); }

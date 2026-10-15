@@ -14,20 +14,20 @@ export default function Library() {
   })(); }, []);
 
   return (
-    <main className="min-h-screen bg-[#091426] text-[#F7F3EA] px-6 py-16 max-w-2xl mx-auto">
-      <h1 className="text-3xl text-[#D7B56D] mb-2">Digital Library</h1>
-      <p className="text-[#F7F3EA]/60 mb-8 text-sm">Your books, included with your account.</p>
+    <main className="min-h-screen bg-[#FFF9F3] text-[#1E1B2E] px-6 py-16 max-w-2xl mx-auto">
+      <h1 className="text-3xl text-[#8B5CF6] mb-2">Digital Library</h1>
+      <p className="text-[#6B6580] mb-8 text-sm">Your books, included with your account.</p>
       {books.length === 0 && (
-        <div className="bg-[#142B45] rounded-2xl p-8 text-center">
+        <div className="bg-white rounded-2xl card-shadow p-8 text-center">
           <p className="text-lg mb-2"><em>Manifest Your 2027</em></p>
-          <p className="text-sm text-[#F7F3EA]/60">by Cristiane Silva — coming soon to your library.</p>
+          <p className="text-sm text-[#6B6580]">by Cristiane Silva — coming soon to your library.</p>
         </div>
       )}
       <div className="space-y-4">
         {books.map(b => (
-          <div key={b.id} className="bg-[#142B45] rounded-2xl p-6">
+          <div key={b.id} className="bg-white rounded-2xl card-shadow p-6">
             <h3 className="text-lg">{b.title}</h3>
-            <p className="text-sm text-[#F7F3EA]/60">{b.author}</p>
+            <p className="text-sm text-[#6B6580]">{b.author}</p>
           </div>
         ))}
       </div>

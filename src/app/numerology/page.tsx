@@ -25,24 +25,24 @@ export default function Numerology() {
     setRes(out);
   }
 
-  const inp = "w-full mb-4 px-4 py-3 rounded-lg bg-[#091426] border border-[#D7B56D]/20 outline-none";
+  const inp = "w-full mb-4 px-4 py-3 rounded-lg bg-[#FFF9F3] border border-violet-300/20 outline-none";
   return (
-    <main className="min-h-screen bg-[#091426] text-[#F7F3EA] px-6 py-16 max-w-2xl mx-auto">
-      <h1 className="text-3xl text-[#D7B56D] mb-2">Numerology Calculator</h1>
-      <p className="text-[#F7F3EA]/60 mb-8 text-sm">Symbolic self-reflection — calculations are deterministic and transparent, not predictions.</p>
-      <form onSubmit={calc} className="bg-[#142B45] rounded-2xl p-8 mb-8">
-        <label className="text-sm text-[#D7B56D]">Birth date</label>
+    <main className="min-h-screen bg-[#FFF9F3] text-[#1E1B2E] px-6 py-16 max-w-2xl mx-auto">
+      <h1 className="text-3xl text-[#8B5CF6] mb-2">Numerology Calculator</h1>
+      <p className="text-[#6B6580] mb-8 text-sm">Symbolic self-reflection — calculations are deterministic and transparent, not predictions.</p>
+      <form onSubmit={calc} className="bg-white rounded-2xl card-shadow p-8 mb-8">
+        <label className="text-sm text-[#8B5CF6]">Birth date</label>
         <input type="date" className={inp + " mt-1"} value={birth} onChange={e => setBirth(e.target.value)} required />
-        <label className="text-sm text-[#D7B56D]">Full name (optional)</label>
+        <label className="text-sm text-[#8B5CF6]">Full name (optional)</label>
         <input className={inp + " mt-1"} placeholder="Your full birth name" value={name} onChange={e => setName(e.target.value)} />
-        <button className="w-full bg-[#D7B56D] text-[#091426] py-3 rounded-full font-medium">Calculate</button>
+        <button className="w-full bg-gradient-to-r from-violet-600 to-fuchsia-500 text-white py-3 rounded-full font-medium">Calculate</button>
       </form>
       {res && (
         <div className="space-y-4">
           {res.map(r => (
-            <div key={r.label} className="bg-[#142B45] rounded-2xl p-6 flex gap-6 items-center">
-              <div className="text-4xl text-[#D7B56D] font-light w-16 text-center">{r.value}</div>
-              <div><h3 className="text-lg">{r.label}</h3><p className="text-[#F7F3EA]/60 text-sm">{MEANINGS[r.value] ?? ""}</p></div>
+            <div key={r.label} className="bg-white rounded-2xl card-shadow p-6 flex gap-6 items-center">
+              <div className="text-4xl text-[#8B5CF6] font-light w-16 text-center">{r.value}</div>
+              <div><h3 className="text-lg">{r.label}</h3><p className="text-[#6B6580] text-sm">{MEANINGS[r.value] ?? ""}</p></div>
             </div>
           ))}
         </div>
