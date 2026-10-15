@@ -66,16 +66,23 @@ export default function Login() {
     setBusy(true);
     setKind("");
     setMsg("Signing in…");
-    const { error } = await supabase.auth.signInWithPassword({ email: em, password });
-    setBusy(false);
-    if (error) {
+    try {
+      const { error } = await supabase.auth.signInWithPassword({ email: em, password });
+      if (error) {
+        setKind("err");
+        setMsg("Incorrect email or password.");
+        return;
+      }
+      setKind("ok");
+      setMsg("Welcome back!");
+      window.location.href = "/";
+    } catch {
+      // Auth client failed unexpectedly (never leave the form hanging).
       setKind("err");
-      setMsg("Incorrect email or password.");
-      return;
+      setMsg("Something went wrong. Please try again.");
+    } finally {
+      setBusy(false);
     }
-    setKind("ok");
-    setMsg("Welcome back!");
-    window.location.href = "/";
   }
 
   return (
